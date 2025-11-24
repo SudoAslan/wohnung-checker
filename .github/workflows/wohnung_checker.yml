@@ -2,11 +2,11 @@ name: Wohnung Checker
 
 on:
   schedule:
-    - cron: "*/2 * * * *"  # alle 2 Minuten, wie du wolltest
+    - cron: "*/2 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write   # wichtig, damit Actions ins Repo pushen darf
+  contents: write
 
 jobs:
   check-flats:
@@ -37,6 +37,7 @@ jobs:
           python wohnung_checker_github.py
 
       - name: Commit updated last_count
+        shell: bash
         run: |
           if [ -n "$(git status --porcelain last_count.txt)" ]; then
             echo "Änderung in last_count.txt gefunden -> commit & push"
@@ -45,5 +46,6 @@ jobs:
             git add last_count.txt
             git commit -m "Update last_count to $(cat last_count.txt)"
             git push
-          else:
+          else
             echo "Keine Änderung an last_count.txt -> kein Commit"
+          fi
