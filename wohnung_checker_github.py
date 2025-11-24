@@ -11,6 +11,8 @@ SEARCH_URL = "https://stadtundland.de/wohnungssuche?district=Buckower+Felder&min
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
+LAST_COUNT_FILE = "last_count.txt"
+
 
 def sende_telegram(text: str) -> None:
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -23,6 +25,21 @@ def sende_telegram(text: str) -> None:
         print("Telegram-Fehler:", e)
 
 
+def lade_letzte_anzahl() -> int | None:
+    if not os.path.exists(LAST_COUNT_FILE):
+        return None
+    try:
+        with open(LAST_COUNT_FILE, "r", encoding="utf-8") as f:
+            return int(f.read().strip())
+    except Exception:
+        return None
+
+
+def speichere_anzahl(anzahl: int) -> None:
+    with open(LAST_COUNT_FILE, "w", encoding="utf-8") as f:
+        f.write(str(anzahl))
+
+
 async def hole_anzahl_wohnungen() -> int:
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
@@ -33,8 +50,9 @@ async def hole_anzahl_wohnungen() -> int:
 
         try:
             await page.wait_for_selector("text=Suchergebnis", timeout=15000)
-        except PlaywrightTimeoutError:
-            print("Konnte 'Suchergebnis' nicht finden.")
+        except TimeoutError as e:
+            # Wenn du magst, genauer loggen
+            print("Konnte 'Suchergebnis' nicht finden:", e)
             await browser.close()
             return 0
 
@@ -54,14 +72,19 @@ async def hole_anzahl_wohnungen() -> int:
 
 
 async def main():
-    anzahl = await hole_anzahl_wohnungen()
-    print("Anzahl Wohnungen:", anzahl)
+    alte_anzahl = lade_letzte_anzahl()
+    neue_anzahl = await hole_anzahl_wohnungen()
 
-    if anzahl > 0:
-        text = f"Aktuelle Anzahl 3-Zimmer-Wohnungen in Buckower Felder: {anzahl}"
+    print(f"Alte Anzahl: {alte_anzahl}, neue Anzahl: {neue_anzahl}")
+
+    if alte_anzahl is None or neue_anzahl != alte_anzahl:
+        # NUR HIER wird gesendet
+        text = f"Aktuelle Anzahl 3-Zimmer-Wohnungen in Buckower Felder: {neue_anzahl}"
+        print("Anzahl hat sich geändert -> Telegram:", text)
         sende_telegram(text)
+        speichere_anzahl(neue_anzahl)
     else:
-        print("Keine Wohnungen gefunden, keine Nachricht gesendet.")
+        print("Keine Änderung -> keine Telegram-Nachricht.")
 
 
 if __name__ == "__main__":
