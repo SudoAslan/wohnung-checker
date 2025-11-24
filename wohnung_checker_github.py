@@ -79,7 +79,7 @@ async def main():
 
     if alte_anzahl is None or neue_anzahl != alte_anzahl:
         # NUR HIER wird gesendet
-        text = f"Aktuelle Anzahl 3-Zimmer-Wohnungen in Buckower Felder: {neue_anzahl}"
+        text = f"3-Zimmer-Wohnungen in Buckower Felder: {neue_anzahl}"
         print("Anzahl hat sich geändert -> Telegram:", text)
         sende_telegram(text)
         speichere_anzahl(neue_anzahl)
