@@ -16,7 +16,7 @@ LAST_COUNT_FILE = "last_count.txt"
 
 def sende_telegram(text: str) -> None:
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    data = {"chat_id": TELEGRAM_CHAT_ID, "text": text}
+    data = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True}
     try:
         r = requests.post(url, data=data, timeout=15)
         if not r.ok:
@@ -79,7 +79,7 @@ async def main():
 
     if alte_anzahl is None or neue_anzahl != alte_anzahl:
         # NUR HIER wird gesendet
-        text = f"3-Zimmer-Wohnungen in Buckower Felder: {neue_anzahl}"
+        text = f'3-Zimmer-Wohnungen in Buckower Felder: {neue_anzahl}\n<a href="{SEARCH_URL}">➡️ Zur Wohnungsansicht</a>'
         print("Anzahl hat sich geändert -> Telegram:", text)
         sende_telegram(text)
         speichere_anzahl(neue_anzahl)
