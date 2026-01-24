@@ -1,7 +1,8 @@
-# Wohnung Checker  Automated Monitoring Workflow
+# Wohnung Checker – Automated Monitoring Workflow
 
-An automated end-to-end workflow that monitors a real estate website for new apartment listings based on predefined criteria such as location and number of rooms
-and sends real-time notifications via Telegram.
+An automated end-to-end workflow that monitors a real estate website for new apartment listings based on predefined criteria such as location and number of rooms, and sends real-time notifications via Telegram.
+
+---
 
 ## Why this project?
 
@@ -25,6 +26,32 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 - **Telegram Bot API** (Notifications)
 - **YAML** (Workflow Configuration)
 
+---
+
+## How it works
+
+1. A Playwright-based Python script navigates the target website and extracts relevant listing data.
+2. The extracted data is compared with previous results to detect changes.
+3. The workflow is executed automatically via GitHub Actions using scheduled and manual triggers.
+4. When a new listing or change is detected, a notification is sent via the Telegram Bot API.
+
+---
+
+## CI/CD Automation
+
+The workflow runs fully automated in a CI/CD environment using GitHub Actions.  
+It supports both scheduled execution (cron-based) and manual triggering via workflow dispatch.
+
+---
+
+## Example Notifications
+
+<p align="center">
+  <img src="picturess/tgChat.PNG" width="300">
+  <img src="picturess/tgScreenshot.PNG" width="300">
+</p>
+
+---
 
 ## Key Learnings
 
@@ -39,10 +66,4 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 
 ## Notes
 
-This project focuses on automation concepts, workflow reliability, and integration patterns rather than the specific content being monitored.
-
-<img src="picturess/tgChat.PNG" width="300">
-<img src="picturess/tgScreenshot.PNG" width="300">
-
-
-
+This project focuses on automation concepts, workflow reliability, and integration patterns rather than on the specific content being monitored.
