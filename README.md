@@ -47,8 +47,8 @@ It supports both scheduled execution (cron-based) and manual triggering via work
 ## Example Notifications
 
 <p align="center">
-  <img src="picturess/tgChat.PNG" width="300">
-  <img src="picturess/tgScreenshot.PNG" width="300">
+  <img src="pictures/tgChat.PNG" width="300">
+  <img src="pictures/tgScreenshot.PNG" width="300">
 </p>
 
 ---
