@@ -1,4 +1,4 @@
-# Wohnung Checker , Automated Monitoring Workflow
+# Wohnung Checker  Automated Monitoring Workflow
 
 An automated end-to-end workflow that monitors a real estate website for new apartment listings based on predefined criteria such as location and number of rooms
 and sends real-time notifications via Telegram.
@@ -40,3 +40,8 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 ## Notes
 
 This project focuses on automation concepts, workflow reliability, and integration patterns rather than the specific content being monitored.
+
+![Telegram Notification](picturess/tgChat.PNG)
+![Telegram Notification](picturess/tgScreenshot.PNG)
+
+
