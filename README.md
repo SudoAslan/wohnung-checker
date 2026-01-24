@@ -41,8 +41,6 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 
 This project focuses on automation concepts, workflow reliability, and integration patterns rather than the specific content being monitored.
 
-![Telegram Notification](picturess/tgChat.PNG)
-![Telegram Notification](picturess/tgScreenshot.PNG)
 <img src="picturess/tgChat.PNG" width="300">
 <img src="picturess/tgScreenshot.PNG" width="300">
 
