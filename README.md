@@ -43,5 +43,8 @@ This project focuses on automation concepts, workflow reliability, and integrati
 
 ![Telegram Notification](picturess/tgChat.PNG)
 ![Telegram Notification](picturess/tgScreenshot.PNG)
+<img src="picturess/tgChat.PNG" width="300">
+<img src="picturess/tgScreenshot.PNG" width="300">
+
 
 
