@@ -1,10 +1,22 @@
 # Wohnung Checker – Automated Monitoring Workflow
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-green)
+![Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+
 An automated end-to-end workflow that monitors a real estate website for new apartment listings based on predefined criteria such as location and number of rooms, and sends real-time notifications via Telegram.
 
 ---
 
-## Why this project?
+## 🚀 About the Project
+
+This project was created to automate the process of monitoring real estate listings and to demonstrate practical skills in automation, CI/CD, and system integration.
+
+It runs fully automated and provides real-time notifications when relevant changes are detected.
+
+---
+
+## 🎯 Why this project?
 
 The goal of this project was to design and implement a reliable automation workflow that demonstrates:
 
@@ -14,11 +26,11 @@ The goal of this project was to design and implement a reliable automation workf
 - Event-driven notifications
 - Monitoring and alerting concepts
 
-The project simulates real-world automation scenarios commonly used in QA Automation, Platform Engineering, and DevOps environments.
+The project reflects real-world use cases in QA Automation, Platform Engineering, and DevOps environments.
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Python**
 - **Playwright** (Browser Automation)
@@ -28,7 +40,7 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 
 ---
 
-## How it works
+## ⚙️ How it works
 
 1. A Playwright-based Python script navigates the target website and extracts relevant listing data.
 2. The extracted data is compared with previous results to detect changes.
@@ -37,14 +49,14 @@ The project simulates real-world automation scenarios commonly used in QA Automa
 
 ---
 
-## CI/CD Automation
+## 🔄 CI/CD Automation
 
 The workflow runs fully automated in a CI/CD environment using GitHub Actions.  
 It supports both scheduled execution (cron-based) and manual triggering via workflow dispatch.
 
 ---
 
-## Example Notifications
+## 📸 Example Notifications
 
 <p align="center">
   <img src="pictures/tgChat.PNG" width="300">
@@ -53,7 +65,7 @@ It supports both scheduled execution (cron-based) and manual triggering via work
 
 ---
 
-## Key Learnings
+## 📚 Key Learnings
 
 - Designing reliable automation workflows
 - Working with browser automation using Playwright
@@ -64,11 +76,6 @@ It supports both scheduled execution (cron-based) and manual triggering via work
 
 ---
 
-## Notes
+## 📝 Notes
 
 This project focuses on automation concepts, workflow reliability, and integration patterns rather than on the specific content being monitored.
-
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-green)
-![Status](https://img.shields.io/badge/Build-Passing-brightgreen)
-
