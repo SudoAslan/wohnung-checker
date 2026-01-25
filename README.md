@@ -67,3 +67,8 @@ It supports both scheduled execution (cron-based) and manual triggering via work
 ## Notes
 
 This project focuses on automation concepts, workflow reliability, and integration patterns rather than on the specific content being monitored.
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-green)
+![Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+
