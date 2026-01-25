@@ -1,4 +1,4 @@
-# Wohnung Checker – Automated Change Detection & Notification System
+# Automated Change Detection & Notification System
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-green)
