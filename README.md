@@ -3,6 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-green)
 ![Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+![Automation](https://img.shields.io/badge/Automation-Workflow-orange)
+
 
 An automated end-to-end workflow that monitors a real estate website for new apartment listings based on predefined criteria such as location and number of rooms, and sends real-time notifications via Telegram.
 
